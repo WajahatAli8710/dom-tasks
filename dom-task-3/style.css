@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+main {
+  height: 100%;
+  width: 100%;
+  background-color: #778873;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: arial;
+  cursor: pointer;
+  background-color: #a1bc98;
+  border: 2px solid #d2dcb6;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 1;
+  color: #f1f3e0;
+}
+button:active {
+  scale: 0.95;
+}
+h1 {
+  font-size: 1.5rem;
+  color: #f1f3e0;
+}
