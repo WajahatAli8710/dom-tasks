@@ -11,7 +11,7 @@ btn.addEventListener("click", () => {
   let num = Math.floor(Math.random() * text.length);
   console.log(num);
 
-  let x = Math.floor(Math.random() * 80 + 1);
+  let x = Math.floor(Math.random() * 75 + 1);
   let y = Math.floor(Math.random() * 80 - 1);
   let deg = Math.floor(Math.random() * 40);
   let scale = Math.floor((Math.random() * 2) +1) ;
