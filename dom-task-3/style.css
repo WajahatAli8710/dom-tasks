@@ -17,6 +17,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 button {
   padding: 1rem 1.5rem;
