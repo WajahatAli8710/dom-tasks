@@ -1,0 +1,5 @@
+Welcome to the Interactive DOM Space.
+Every element here responds with purpose and motion.
+Small actions create big visual experiences.
+This interface is crafted to feel smooth and dynamic.
+Explore the layout, experiment with ideas, and enjoy the flow.
