@@ -19,7 +19,7 @@ btn.addEventListener("click", function () {
     grow = 0;
     bar.style.width = grow + "%";
     h1.textContent = grow + "%";
-    btn.innerHTML = "Downloaded"
+    btn.innerHTML = "Downloaded";
     btn.style.opacity = 1;
     btn.style.pointerEvents = "";
     const a = document.createElement("a");
