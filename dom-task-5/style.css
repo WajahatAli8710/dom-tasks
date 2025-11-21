@@ -126,7 +126,10 @@ main .post .center .activity .left {
 }
 main .post .center .activity .left .ri-heart-fill {
   font-size: 1.8rem;
-  color: #962fbf;
+  color: transparent;
+  background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 main .post .center .activity .left i {
   font-size: 1.8rem;
