@@ -1,8 +1,6 @@
 let image = document.querySelector("#image");
 let icon = document.querySelector("#heart-icon");
 let showHeart = document.querySelector("#show-heart");
-console.log(showHeart);
-
 let flag = 0;
 
 function likeEffect() {
@@ -26,6 +24,9 @@ function likeEffect() {
 image.addEventListener("dblclick", function () {
   likeEffect();
   flag++;
+  if (flag > 1) {
+    flag = 1;
+  }
 });
 
 showHeart.addEventListener("click", function () {
