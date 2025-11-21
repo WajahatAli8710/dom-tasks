@@ -131,6 +131,7 @@ main .post .center .activity .left .ri-heart-fill {
 main .post .center .activity .left i {
   font-size: 1.8rem;
   color: #000;
+  cursor: pointer;
 }
 main .post .center .activity .rigth i {
   font-size: 1.8rem;
