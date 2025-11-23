@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #EFECE3;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+@font-face {
+  font-family: machina-light;
+  src: url(./PPNeueMachina-Light.otf);
+}
+@font-face {
+  font-family: machina-regular;
+  src: url(./PPNeueMachina-Regular.otf);
+}
+main {
+  width: 100%;
+  background-color: #EBE9E9;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  .card {
+    background-color: #4A70A9;
+    width: 22rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #8FABD4;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+
+      h1 {
+        font-size: 2rem;
+        font-family: machina-light;
+
+      }
+      p {
+        font-size: 1.2rem;
+        font-family: machina-regular;
+      }
+
+      .tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        span {
+          background-color: #0000009a;
+          font-size: 1.2rem;
+          width: fit-content;
+          padding: 0.5rem 0.8rem;
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+}
