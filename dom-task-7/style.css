@@ -45,9 +45,8 @@ main section .piano .note {
   background-color: #fff;
   transition: all ease 0.2s;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding-bottom: 1rem;
   font-weight: 600;
   border-radius: 0.2rem;
   color: #000;
@@ -65,5 +64,7 @@ main section .piano .note.active {
   main section .piano .note {
     height: 12rem;
     width: 2.5rem;
+    align-items: flex-end;
+    padding-bottom: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
