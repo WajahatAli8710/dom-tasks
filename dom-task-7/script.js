@@ -29,13 +29,14 @@ const songs = {
   z: "./songs/53.mp3",
 };
 let notes = "";
-for (let i = 97; i < 123; i++) {
+for (let i = 97; i < 110; i++) {
   let alpha = String.fromCharCode(i);
   notes += `<div class="note" id="${alpha}">${alpha.toUpperCase()}</div>`;
 }
 piano.innerHTML = notes;
 
 let allnotes = document.querySelectorAll(".note");
+
 
 allnotes.forEach(function (note) {
   note.addEventListener("click", function () {
