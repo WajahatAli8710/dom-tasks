@@ -14,19 +14,6 @@ const songs = {
   k: "./songs/38.mp3",
   l: "./songs/39.mp3",
   m: "./songs/40.mp3",
-  n: "./songs/41.mp3",
-  o: "./songs/42.mp3",
-  p: "./songs/43.mp3",
-  q: "./songs/44.mp3",
-  r: "./songs/45.mp3",
-  s: "./songs/46.mp3",
-  t: "./songs/47.mp3",
-  u: "./songs/48.mp3",
-  v: "./songs/49.mp3",
-  w: "./songs/50.mp3",
-  x: "./songs/51.mp3",
-  y: "./songs/52.mp3",
-  z: "./songs/53.mp3",
 };
 let notes = "";
 for (let i = 97; i < 110; i++) {
