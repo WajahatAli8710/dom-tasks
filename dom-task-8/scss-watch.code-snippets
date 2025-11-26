@@ -1,0 +1,10 @@
+{
+  "scss watch command": {
+    "prefix": "sw",
+    "body": [
+      "sass --watch scss:css"
+    ],
+    "description": "Run SCSS watch command"
+  }
+
+}
