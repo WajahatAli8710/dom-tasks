@@ -56,7 +56,7 @@ const reels = [
 let sum = "";
 reels.forEach(function (elem) {
   sum += `<div class="reel">
-          <video src="${elem.video}" loop></video>
+          <video src="${elem.video}" loop autoplay ></video>
           <div class="top">
             <h4><i class="ri-volume-up-fill"></i></h4>
           </div>
