@@ -14,6 +14,7 @@ body {
 
 html {
   scroll-snap-type: y mandatory;
+  scroll-padding-top: 2rem;
 }
 
 main {
@@ -153,10 +154,11 @@ main section .reel .bottom p {
   main section {
     align-items: center;
     gap: 2rem;
+    padding: 1rem;
   }
   main section .reel {
     width: 410px;
-    height: 92vh;
+    height: 90vh;
   }
 }
 @media (min-width: 600px) {

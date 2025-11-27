@@ -13,8 +13,8 @@ body {
 }
 html {
   scroll-snap-type: y mandatory;
-    
 
+  scroll-padding-top: 2rem;
 }
 main {
   width: 100%;
@@ -27,7 +27,6 @@ main {
 
   section {
     width: 100%;
-    
     display: flex;
     flex-direction: column;
     .reel {
@@ -36,11 +35,11 @@ main {
       scroll-snap-align: start;
       position: relative;
       background-color: #000;
-        video{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+      video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
       .top {
         position: absolute;
         top: 0;
@@ -120,20 +119,19 @@ main {
           width: 100%;
           display: flex;
           align-items: center;
-          
 
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            img {
-              width: 3rem;
-              border-radius: 50%;
-              object-fit: cover;
-              object-position: top;
-            }
-            h2 {
-              font-size: 1.5rem;
-              font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          img {
+            width: 3rem;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+          }
+          h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
           }
         }
         button {
@@ -157,11 +155,13 @@ main {
 @media (min-width: 430px) {
   main {
     section {
-        align-items: center;
-        gap: 2rem;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem;
+
       .reel {
         width: 410px;
-        height: 92vh;
+        height: 90vh;
       }
     }
   }
@@ -170,15 +170,14 @@ main {
 @media (min-width: 600px) {
   main {
     section {
-
-        align-items: center;
+      align-items: center;
       .reel {
         width: 410px;
-        .right{
-            transform: translateX(100%);
+        .right {
+          transform: translateX(100%);
         }
-        .bottom{
-            width: 100%;
+        .bottom {
+          width: 100%;
         }
       }
     }
