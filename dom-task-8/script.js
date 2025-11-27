@@ -1,55 +1,55 @@
 let section = document.querySelector("section");
 const reels = [
   {
-    video: "",
-    dp: "",
+    video: "./videos/video1.mp4",
+    dp: "./images/dp-1.webp",
     username: "emily_smith",
     isFollow: true,
     likes: 145,
     isLiked: false,
     comments: 12,
-    description: "Enjoying the weekend vibes ✨",
+    description: "Enjoying the weekend vibes ✨"
   },
   {
-    video: "",
-    dp: "",
+    video: "./videos/video2.mp4",
+    dp: "./images/dp-2.webp",
     username: "alex_brown",
     isFollow: false,
     likes: 98,
     isLiked: true,
     comments: 5,
-    description: "Late night grind 🔥",
+    description: "Late night grind 🔥"
   },
   {
-    video: "",
-    dp: "",
+    video: "./videos/video3.mp4",
+    dp: "./images/dp-3.webp",
     username: "michael_jordan",
     isFollow: true,
     likes: 230,
     isLiked: false,
     comments: 20,
-    description: "New day, new energy 💪",
+    description: "New day, new energy 💪"
   },
   {
-    video: "",
-    dp: "",
+    video: "./videos/video4.mp4",
+    dp: "./images/dp-4.webp",
     username: "sophia_wilson",
     isFollow: false,
     likes: 77,
     isLiked: true,
     comments: 8,
-    description: "Feeling the moment 🌸",
+    description: "Feeling the moment 🌸"
   },
   {
-    video: "",
-    dp: "",
+    video: "./videos/video5.mp4",
+    dp: "./images/dp-5.webp",
     username: "liam_james",
     isFollow: true,
     likes: 150,
     isLiked: false,
     comments: 15,
-    description: "Life is better with good music 🎧",
-  },
+    description: "Life hits different with good music 🎧"
+  }
 ];
 
 let sum = "";
@@ -97,4 +97,7 @@ reels.forEach(function (elem) {
         </div>`;
 });
 
-section.innerHTML = sum;
+
+section.innerHTML = sum
+
+
