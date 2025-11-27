@@ -1,4 +1,5 @@
 let section = document.querySelector("section");
+
 const reels = [
   {
     video: "./videos/video1.mp4",
@@ -8,7 +9,7 @@ const reels = [
     likes: 145,
     isLiked: false,
     comments: 12,
-    description: "Enjoying the weekend vibes ✨"
+    description: "Enjoying the weekend vibes ✨",
   },
   {
     video: "./videos/video2.mp4",
@@ -18,7 +19,7 @@ const reels = [
     likes: 98,
     isLiked: true,
     comments: 5,
-    description: "Late night grind 🔥"
+    description: "Late night grind 🔥",
   },
   {
     video: "./videos/video3.mp4",
@@ -28,7 +29,7 @@ const reels = [
     likes: 230,
     isLiked: false,
     comments: 20,
-    description: "New day, new energy 💪"
+    description: "New day, new energy 💪",
   },
   {
     video: "./videos/video4.mp4",
@@ -38,7 +39,7 @@ const reels = [
     likes: 77,
     isLiked: true,
     comments: 8,
-    description: "Feeling the moment 🌸"
+    description: "Feeling the moment 🌸",
   },
   {
     video: "./videos/video5.mp4",
@@ -48,14 +49,14 @@ const reels = [
     likes: 150,
     isLiked: false,
     comments: 15,
-    description: "Life hits different with good music 🎧"
-  }
+    description: "Life hits different with good music 🎧",
+  },
 ];
 
 let sum = "";
 reels.forEach(function (elem) {
   sum += `<div class="reel">
-          <video src="${elem.video}" loop autoplay muted  ></video>
+          <video src="${elem.video}" loop></video>
           <div class="top">
             <h4><i class="ri-volume-up-fill"></i></h4>
           </div>
@@ -97,7 +98,24 @@ reels.forEach(function (elem) {
         </div>`;
 });
 
+section.innerHTML = sum;
 
-section.innerHTML = sum
+let videos = document.querySelectorAll("video");
 
+let observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      let video = entry.target;
 
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+videos.forEach((video) => observer.observe(video));
