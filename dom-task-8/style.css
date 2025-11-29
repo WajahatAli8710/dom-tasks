@@ -14,7 +14,6 @@ body {
 
 html {
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 2rem;
 }
 
 main {
@@ -23,23 +22,26 @@ main {
 }
 main section {
   width: 100%;
+}
+main section .allreels {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
-main section .reel {
+main section .allreels .reel {
   height: 100vh;
   width: 100%;
   scroll-snap-align: start;
   position: relative;
   background-color: #000;
 }
-main section .reel video {
+main section .allreels .reel video {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main section .reel .top {
+main section .allreels .reel .top {
   position: absolute;
   top: 0;
   width: 100%;
@@ -48,7 +50,7 @@ main section .reel .top {
   align-items: center;
   justify-content: flex-end;
 }
-main section .reel .top h4 {
+main section .allreels .reel .top h4 {
   padding: 0.6rem;
   width: -moz-fit-content;
   width: fit-content;
@@ -56,13 +58,15 @@ main section .reel .top h4 {
   -webkit-backdrop-filter: blur(16px);
           backdrop-filter: blur(16px);
   background-color: rgba(255, 255, 255, 0.1921568627);
+  cursor: pointer;
 }
-main section .reel .top h4 i {
+main section .allreels .reel .top h4 i {
   font-size: 1.6rem;
   color: #fff;
+  font-weight: 200;
   pointer-events: none;
 }
-main section .reel .right {
+main section .allreels .reel .right {
   position: absolute;
   right: 0;
   bottom: 0px;
@@ -73,26 +77,36 @@ main section .reel .right {
   gap: 1.4rem;
   align-items: center;
 }
-main section .reel .right .feature {
+main section .allreels .reel .right .like,
+main section .allreels .reel .right .comment,
+main section .allreels .reel .right .share,
+main section .allreels .reel .right .save {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main section .reel .right .feature h4 {
+main section .allreels .reel .right .like h4,
+main section .allreels .reel .right .comment h4,
+main section .allreels .reel .right .share h4,
+main section .allreels .reel .right .save h4 {
   font-size: 2.2rem;
   font-weight: 200;
   pointer-events: none;
 }
-main section .reel .right .feature h6 {
+main section .allreels .reel .right .like h6,
+main section .allreels .reel .right .comment h6,
+main section .allreels .reel .right .share h6,
+main section .allreels .reel .right .save h6 {
   font-size: 1rem;
+  pointer-events: none;
 }
-main section .reel .right #more h4 {
+main section .allreels .reel .right #more h4 {
   font-size: 2.2rem;
   font-weight: 200;
   pointer-events: none;
   transform: rotate(90deg);
 }
-main section .reel .right img {
+main section .allreels .reel .right img {
   width: 3rem;
   border-radius: 0.5rem;
   -o-object-fit: cover;
@@ -101,13 +115,13 @@ main section .reel .right img {
      object-position: top;
   border: 2px solid #fff;
 }
-main section .reel img {
+main section .allreels .reel img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   height: 100%;
 }
-main section .reel .bottom {
+main section .allreels .reel .bottom {
   position: absolute;
   bottom: 0px;
   padding: 2rem 1.2rem;
@@ -116,7 +130,7 @@ main section .reel .bottom {
   display: flex;
   flex-direction: column;
 }
-main section .reel .bottom .user-dets {
+main section .allreels .reel .bottom .user-dets {
   width: 100%;
   display: flex;
   align-items: center;
@@ -124,7 +138,7 @@ main section .reel .bottom .user-dets {
   align-items: center;
   gap: 1rem;
 }
-main section .reel .bottom .user-dets img {
+main section .allreels .reel .bottom .user-dets img {
   width: 3rem;
   border-radius: 50%;
   -o-object-fit: cover;
@@ -132,11 +146,11 @@ main section .reel .bottom .user-dets img {
   -o-object-position: top;
      object-position: top;
 }
-main section .reel .bottom .user-dets h2 {
+main section .allreels .reel .bottom .user-dets h2 {
   font-size: 1.5rem;
   font-weight: 600;
 }
-main section .reel .bottom button {
+main section .allreels .reel .bottom button {
   padding: 0.4rem 1rem;
   background-color: transparent;
   border: 1px solid #fff;
@@ -145,33 +159,36 @@ main section .reel .bottom button {
   text-transform: capitalize;
   font-weight: 600;
 }
-main section .reel .bottom p {
+main section .allreels .reel .bottom p {
   font-size: 1.3rem;
   font-weight: 600;
 }
 
 @media (min-width: 430px) {
-  main section {
+  html {
+    scroll-padding-top: 2rem;
+  }
+  main section .allreels {
     align-items: center;
     gap: 2rem;
     padding: 1rem;
   }
-  main section .reel {
+  main section .allreels .reel {
     width: 410px;
     height: 90vh;
   }
 }
 @media (min-width: 600px) {
-  main section {
+  main section .allreels {
     align-items: center;
   }
-  main section .reel {
+  main section .allreels .reel {
     width: 410px;
   }
-  main section .reel .right {
+  main section .allreels .reel .right {
     transform: translateX(100%);
   }
-  main section .reel .bottom {
+  main section .allreels .reel .bottom {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,15 +1,16 @@
-let section = document.querySelector("section");
-
-const reels = [
+let allreels = document.querySelector(".allreels");
+let btn = document.querySelector(".btn");
+let reelData = [
   {
     video: "./videos/video1.mp4",
     dp: "./images/dp-1.webp",
     username: "emily_smith",
-    isFollow: true,
+    isFollow: false,
     likes: 145,
     isLiked: false,
     comments: 12,
-    description: "Enjoying the weekend vibes ✨",
+    caption: "Enjoying the weekend vibes",
+    isMuted: false,
   },
   {
     video: "./videos/video2.mp4",
@@ -17,19 +18,22 @@ const reels = [
     username: "alex_brown",
     isFollow: false,
     likes: 98,
-    isLiked: true,
+    isLiked: false,
     comments: 5,
-    description: "Late night grind 🔥",
+    caption: "Late night grind",
+    isMuted: true,
   },
   {
     video: "./videos/video3.mp4",
     dp: "./images/dp-3.webp",
     username: "michael_jordan",
-    isFollow: true,
+    isFollow: false,
     likes: 230,
     isLiked: false,
+    isMuted: true,
+
     comments: 20,
-    description: "New day, new energy 💪",
+    caption: "New day, new energy",
   },
   {
     video: "./videos/video4.mp4",
@@ -37,44 +41,60 @@ const reels = [
     username: "sophia_wilson",
     isFollow: false,
     likes: 77,
-    isLiked: true,
+    isLiked: false,
     comments: 8,
-    description: "Feeling the moment 🌸",
+    isMuted: true,
+
+    caption: "Feeling the moment",
   },
   {
     video: "./videos/video5.mp4",
     dp: "./images/dp-5.webp",
     username: "liam_james",
-    isFollow: true,
+    isFollow: false,
     likes: 150,
     isLiked: false,
+    isMuted: true,
+
     comments: 15,
-    description: "Life hits different with good music 🎧",
+    caption: "Life hits different with good music",
   },
 ];
 
-let sum = "";
-reels.forEach(function (elem) {
-  sum += `<div class="reel">
-          <video src="${elem.video}" loop autoplay ></video>
+function createReel() {
+  let sum = "";
+  reelData.forEach(function (elem, idx) {
+    sum += `<div class="reel">
+          <video class="video" id="${idx}" src="${elem.video}" loop autoplay ${
+      elem.isMuted ? "muted" : ""
+    }  ></video>
           <div class="top">
-            <h4><i class="ri-volume-up-fill"></i></h4>
+            <h4 class="toggle" id="${idx}">${elem.isMuted? `<i class="ri-volume-mute-line"></i>`:`<i class="ri-volume-up-line"></i>`}</h4>
           </div>
           <div class="right">
-            <div id="like" class="feature">
-              <h4><i class="ri-heart-line"></i></h4>
-              <h6>42.7k</h6>
-            </div>
-            <div id="comment" class="feature">
-              <h4><i class="ri-chat-1-line"></i></h4>
-              <h6>300</h6>
-            </div>
-            <div id="share" class="feature">
-              <h4><i class="ri-send-plane-line"></i></h4>
-            </div>
-            <div id="save" class="feature">
-              <h4><i class="ri-bookmark-line"></i></h4>
-            </div>
+         <div class="like" id="${idx}">
+  <h4>
+    ${
+      elem.isLiked
+        ? `<i class="ri-heart-fill"></i>`
+        : `<i
+      class="ri-heart-line"
+    ></i
+    >`
+    }
+  </h4>
+  <h6>${elem.likes}</h6>
+</div>
+<div class="comment">
+  <h4><i class="ri-chat-1-line"></i></h4>
+  <h6>${elem.comments}</h6>
+</div>
+<div class="share">
+  <h4><i class="ri-send-plane-line"></i></h4>
+</div>
+<div class="save">
+  <h4><i class="ri-bookmark-line"></i></h4>
+</div>
             <div id="more">
               <h4><i class="ri-more-2-line"></i></h4>
             </div>
@@ -91,31 +111,50 @@ reels.forEach(function (elem) {
                 alt=""
               />
               <h2>username</h2>
-              <button id="follow">follow</button>
+              <button class="follow" id="${idx}">${
+      elem.isFollow ? "Unfollow" : "follow"
+    }</button>
             </div>
-            <p>${elem.description}</p>
+            <p>${elem.caption}</p>
           </div>
         </div>`;
+  });
+  allreels.innerHTML = sum;
+}
+
+createReel();
+
+allreels.addEventListener("click", (dets) => {
+  if (dets.target.className === "like") {
+    if (!reelData[dets.target.id].isLiked) {
+      reelData[dets.target.id].likes++;
+      reelData[dets.target.id].isLiked = false;
+      createReel();
+    } else {
+      reelData[dets.target.id].likes--;
+      reelData[dets.target.id].isLiked = false;
+      createReel();
+      console.log(sum);
+    }
+  }
+  if (dets.target.className === "follow") {
+    if (!reelData[dets.target.id].isFollow) {
+      reelData[dets.target.id].isFollow = false;
+      createReel();
+    } else {
+      reelData[dets.target.id].isFollow = false;
+      createReel();
+    }
+  }
+
+  if (dets.target.className === "toggle") {
+    if (!reelData[dets.target.id].isMuted) {
+      reelData[dets.target.id].isMuted = true;
+
+      createReel();
+    } else {
+      reelData[dets.target.id].isMuted = false;
+      createReel();
+    }
+  }
 });
-
-section.innerHTML = sum;
-
-let videos = document.querySelectorAll("video");
-
-let observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      let video = entry.target;
-
-      if (entry.isIntersecting) {
-        video.play();
-      } else {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-  },
-  { threshold: 0.6 }
-);
-
-videos.forEach((video) => observer.observe(video));
