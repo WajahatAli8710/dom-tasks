@@ -10,7 +10,7 @@ let reelData = [
     isLiked: false,
     comments: 12,
     caption: "Enjoying the weekend vibes",
-    isMuted: false,
+    isMuted: true,
   },
   {
     video: "./videos/video2.mp4",
@@ -77,9 +77,7 @@ function createReel() {
     ${
       elem.isLiked
         ? `<i class="ri-heart-fill"></i>`
-        : `<i
-      class="ri-heart-line"
-    ></i
+        : `<i class="ri-heart-line"></i
     >`
     }
   </h4>
@@ -128,7 +126,7 @@ allreels.addEventListener("click", (dets) => {
   if (dets.target.className === "like") {
     if (!reelData[dets.target.id].isLiked) {
       reelData[dets.target.id].likes++;
-      reelData[dets.target.id].isLiked = false;
+      reelData[dets.target.id].isLiked = true;
       createReel();
     } else {
       reelData[dets.target.id].likes--;
@@ -139,7 +137,7 @@ allreels.addEventListener("click", (dets) => {
   }
   if (dets.target.className === "follow") {
     if (!reelData[dets.target.id].isFollow) {
-      reelData[dets.target.id].isFollow = false;
+      reelData[dets.target.id].isFollow = true;
       createReel();
     } else {
       reelData[dets.target.id].isFollow = false;
