@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+:root {
+  --x: 50%;
+  --y: 50%;
+}
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+main video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.box {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: radial-gradient(
+    150px at var(--x) var(--y),
+    hsla(0, 0%, 100%, 0.11),
+    #000000be 90%,
+    #000000e8
+  );
+}
