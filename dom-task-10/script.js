@@ -18,9 +18,8 @@ function randomLetters() {
   i += 0.4;
 
   if (i > p.length) {
-    clearInterval(interval);
     i = 0;
-    console.log("intervel band ho gaya");
+    clearInterval(interval);
   }
 }
 text.addEventListener("mouseenter", () => {
