@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  // overflow: hidden;
+
+  .desktop {
+    height: 100%;
+    width: 100%;
+    background-image: url(./images/wallpaper.png);
+    background-size: cover;
+    background-position: bottom;
+
+    .container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+
+      .terminal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        transform: translate(-50%, -50%);
+        height: 50%;
+        width: 50%;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background-color: #0000003f;
+
+        backdrop-filter: blur(10px);
+        .controls {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-left: 1rem;
+          border-bottom: 1px solid whitesmoke;
+          .terminal-name {
+            width: 30%;
+            height: 1rem;
+            background-color: #00000042;
+            backdrop-filter: blur(10px);
+            font-size: 1rem;
+            font-weight: 200;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem;
+            border-radius: 0.2rem;
+
+            p {
+              font-size: 0.9rem;
+            }
+            .treminal-icon {
+              border-radius: 50%;
+              font-size: 1rem;
+              color: #fff;
+              font-weight: 600;
+              cursor: pointer;
+            }
+            .treminal-icon:hover {
+              background-color: red;
+            }
+          }
+
+          .right {
+            display: flex;
+            align-items: center;
+            .icon {
+              padding: 0.8rem;
+              font-size: 1rem;
+              color: #fff;
+              font-weight: 600;
+              cursor: pointer;
+
+            }
+            .icon:hover {
+              background-color: red;
+            }
+          }
+        }
+        .content {
+          width: 100%;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          h2 {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .taskbar {
+    width: 100%;
+    background-color: #ffffff9d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    backdrop-filter: blur(15px);
+    gap: 0.8rem;
+    img {
+      width: 2.4rem;
+      padding: 4px;
+      border-radius: 5px;
+    }
+    img:hover {
+      background-color: #ffffff8e;
+      backdrop-filter: 10px;
+    }
+  }
+}
